@@ -1,29 +1,35 @@
+/* Define o estilo padrão do corpo da página */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
+/* Define o estilo do cabeçalho da página */
 header {
   background-color: #007bff;
   color: #fff;
   padding: 40px;
 }
 
+/* Define o estilo de um elemento de cabeçalho h1 */
 h1 {
   margin: 0;
   font-size: 24px;
 }
 
+/* Define o estilo da seção principal da página */
 main {
   padding: 20px;
 }
 
+/* Define um contêiner flexível que organiza o conteúdo em uma coluna e o alinha à esquerda. */
 .container {
   display: flex;
   flex-direction: column;
   align-items: normal;
 }
 
+/* Define o estilo de um botão */
 button {
   margin: 10px;
   padding: 10px 20px;
@@ -35,10 +41,12 @@ button {
   cursor: pointer;
 }
 
+/* Define o estilo do botão quando o cursor está sobre ele. */
 button:hover {
   background-color: #0069d9;
 }
 
+/* Define o estilo do botão quando ele está em foco. */
 button:focus {
   outline: none;
 }
@@ -59,21 +67,25 @@ body {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Define o estilo de um elemento de cabeçalho h2 */
 h2 {
 	font-size: 24px;
 	margin-bottom: 20px;
 }
 
+/* Define o estilo de um formulário */
 form {
 	margin-bottom: 20px;
 }
 
+/*  Define o estilo de uma etiqueta */
 label {
 	display: block;
 	font-weight: bold;
 	margin-bottom: 5px;
 }
 
+/* Define o estilo dos campos de entrada de texto */
 input[type="email"],
 input[type="password"],
 input[type="text"] {
@@ -84,6 +96,7 @@ input[type="text"] {
 	border-radius: 5px;
 }
 
+/*  Define o estilo do botão de envio do formulário */
 input[type="submit"] {
 	display: block;
 	width: 100%;
@@ -95,11 +108,13 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
+/* Define o estilo do botão de envio do formulário quando o cursor está sobre ele. */
 input[type="submit"]:hover {
 	background-color: #3e8e41;
 }
 
 /* Personalizando o estilo do painel de login */
+/*  Define o estilo de um painel de login */
 .login-panel {
   margin-top: 50px;
 }
@@ -111,6 +126,7 @@ input[type="submit"]:hover {
 }
 
 /* Personalizando o estilo do painel de cadastro */
+/* Define o estilo de um painel de cadastro */
 .cadastro-panel {
   margin-top: 50px;
 }

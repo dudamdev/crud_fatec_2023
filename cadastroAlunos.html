@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sistema de Cadastros - Fatec Franca</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Nas linhas abaixo são carregados o Vue.js e o Axios, uma biblioteca JavaScript que permite a realização de requisições HTTP assíncronas. -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Uso do Bootstrap para exibir a página de forma responsiva, independentemente do tamanho da tela do dispositivo. -->
   <style>
     .modal-mask {
       position: fixed;
@@ -29,6 +32,7 @@
 </head>
 
 <body>
+  <!-- Criação de um contêiner com a classe container e o ID crudApp. Esse contêiner contém um painel com uma tabela para exibir as informações dos alunos. O painel tem um cabeçalho com o título Alunos e um botão Add para adicionar novos alunos. -->
   <div class="container" id="crudApp">
     <br />
     <h3 align="center">
@@ -44,12 +48,14 @@
             <h3 class="panel-title">Alunos</h3>
           </div>
           <div class="col-md-6" align="right">
+            <!-- Quando o botão Add é clicado, é aberto um modelo com um formulário para adicionar novos alunos.  -->
             <input type="button" class="btn btn-success btn-xs" @click="openModel" value="Add" />
           </div>
         </div>
       </div>
       <div class="panel-body">
         <div class="table-responsive">
+          <!-- A tabela possui quatro colunas: Nome, Sobrenome, Editar e Deletar. Os dados dos alunos são exibidos na tabela por meio de um loop v-for. -->
           <table class="table table-bordered table-striped">
             <tr>
               <th>Nome</th>
@@ -113,6 +119,7 @@
 
 </html>
 
+<!-- O Script no final do documento define uma instância do Vue.js com algumas propriedades e métodos. As propriedades allData, myModel, actionButton e dynamicTitle são usadas para controlar a exibição dos dados na tabela e do modelo. Os métodos fetchAllData, openModel, submitData e deleteData são usados para buscar, adicionar, editar e excluir dados dos alunos. As requisições HTTP são feitas usando a biblioteca Axios. -->
 <script>
   var application = new Vue({
     el: "#crudApp",

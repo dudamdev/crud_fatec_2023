@@ -1,4 +1,5 @@
 /* CSS reset */
+/* Definição das propriedades para todos os elementos */
 *,
 *:before,
 *:after {
@@ -7,10 +8,12 @@
   font-family: Arial, sans-serif;
 }
 
+/* Definição de propriedades para o body */
 body {
   margin: 10px;
 }
 
+/*  Definição de propriedades para todos os links */
 a {
   text-decoration: none;
 }
@@ -21,6 +24,7 @@ a.links {
 }
 
 /* content que contem os formulários */
+/* Definição de propriedades para o container que contém os formulários */
 .content {
   width: 500px;
   margin: 0px auto;
@@ -28,6 +32,7 @@ a.links {
 }
 
 /* formatando o cabeçalho dos formulários */
+/* Definição de propriedades para o cabeçalho dos formulários */
 h1 {
   font-size: 48px;
   color: #066a75;
@@ -37,6 +42,8 @@ h1 {
   text-align: center;
   padding-bottom: 30px;
 }
+
+/* Define a linha abaixo do título */
 h1:after {
   content: " ";
   display: block;
@@ -61,12 +68,17 @@ h1:after {
   );
 }
 
+/* Definição de propriedades para os parágrafos */
 p {
   margin-bottom: 15px;
 }
+
+/* Remove a margem superior do primeiro parágrafo */
 p:first-child {
   margin: 0px;
 }
+
+/* Definição de propriedades para as etiquetas de formulários */
 label {
   color: #405c60;
   position: relative;
@@ -74,6 +86,8 @@ label {
 
 /**** advanced input styling ****/
 /* placeholder */
+/* Estilo avançado para input */
+/* Propriedades do placeholder */
 ::-webkit-input-placeholder {
   color: #bebcbc;
   font-style: italic;
@@ -83,10 +97,13 @@ textarea:-moz-placeholder {
   color: #bebcbc;
   font-style: italic;
 }
+
+/* remove o destaque de seleção */
 input {
   outline: none;
 }
 
+/*  define a largura, a margem superior, o preenchimento, a borda, o raio da borda e a sombra do box  */
 input:not([type="checkbox"]) {
   width: 95%;
   margin-top: 4px;

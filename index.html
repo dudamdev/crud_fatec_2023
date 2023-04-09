@@ -1,83 +1,98 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8" />
   <title>Sistema de Alunos - Fatec Franca 2023</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
+
 <body>
-  <div class="container" >
+  <!-- Define um container para o conteúdo do formulário. -->
+  <div class="container">
+    <!-- Âncoras usadas para direcionar o usuário para a seção de login ou de cadastro. -->
     <a class="links" id="paralogin"></a>
-    <a class="links" id="paracadastro"></a>  
-  
+    <a class="links" id="paracadastro"></a>
+
+    <!-- Insere uma imagem do logo da Fatec Franca. -->
     <img src="https://site.fatecfranca.edu.br/images/logo-fatec-franca-15-anos.png" width=20% height=20%
-    alt="logo fatec"><br /><br />
-    
- 
-    <div class="content">   
-         <strong>Busca de Alunos</strong>
+      alt="logo fatec"><br /><br />
+
+    <!-- Define uma div para o conteúdo principal do formulário. -->
+    <div class="content">
+      <!-- Insere um título para o formulário. -->
+      <strong>Busca de Alunos</strong>
       <!--FORMULÁRIO DE LOGIN-->
+      <!-- Define um formulário para login -->
       <div id="login">
+        <!-- Define um formulário que envia dados para um servidor. -->
         <form action="login.php" method="POST">
-          <h1>Login</h1> 
-          <p> 
+          <h1>Login</h1>
+          <p>
             <label for="nome_login">Seu e-mail</label>
-            <input id="nome_login" name="email_login" required="required" type="text" placeholder="ex. contato@htmlecsspro.com"/>
+            <input id="nome_login" name="email_login" required="required" type="text"
+              placeholder="ex. contato@htmlecsspro.com" />
           </p>
-           
-          <p> 
+
+          <p>
             <label for="email_login">Sua senha</label>
-            <input id="email_login" name="senha_login" required="required" type="password" placeholder="ex. senha" /> 
+            <input id="email_login" name="senha_login" required="required" type="password" placeholder="ex. senha" />
           </p>
-           
-          <p> 
-            <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
+
+          <p>
+            <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
             <label for="manterlogado">Manter-me logado</label>
           </p>
-           
-          <p> 
-            <input type="submit" value="Logar" /> 
+
+          <p>
+            <input type="submit" value="Logar" />
           </p>
-           
+
           <p class="link">
             Ainda não tem conta?
+            <!-- Âncora que permite que o usuário vá para a seção de cadastro clicando no link correspondente. -->
             <a href="#paracadastro">Cadastre-se</a>
           </p>
         </form>
       </div>
- 
+
       <!--FORMULÁRIO DE CADASTRO-->
+      <!-- Define um formulário para cadastro -->
       <div id="cadastro">
+        <!-- Define um formulário que envia dados para um servidor. -->
         <form action="registro.php" method="POST">
-          <h1>Cadastro</h1> 
-           
-          <p> 
+          <h1>Cadastro</h1>
+
+          <p>
             <label for="nome_cad">Seu nome</label>
             <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
           </p>
-           
-          <p> 
+
+          <p>
             <label for="email_cad">Seu e-mail</label>
-            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@htmlecsspro.com"/> 
+            <input id="email_cad" name="email_cad" required="required" type="email"
+              placeholder="contato@htmlecsspro.com" />
           </p>
-           
-          <p> 
+
+          <p>
             <label for="senha_cad">Sua senha</label>
-            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234" />
           </p>
-           
-          <p> 
-            <input type="submit" value="Cadastrar"/> 
+
+          <p>
+            <input type="submit" value="Cadastrar" />
           </p>
-           
-          <p class="link">  
+
+          <p class="link">
             Já tem conta?
+            <!-- Âncora que permite que o usuário vá para a seção de login clicando no link correspondente. -->
             <a href="#paralogin"> Ir para Login </a>
           </p>
         </form>
       </div>
 
     </div>
-  </div>  
+  </div>
 </body>
+
 </html>

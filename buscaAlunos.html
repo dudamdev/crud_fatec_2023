@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de Busca - Fatec Franca</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Nas linhas abaixo são carregados o Vue.js e o Axios, uma biblioteca JavaScript que permite a realização de requisições HTTP assíncronas. -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
+    <!-- Contêiner (div) com um id "searchApp", que será utilizado pelo Vue.js para criar a interface da aplicação. -->
     <div class="container" id="searchApp">
         <br />
-    <h3 align="center">
-      <img src="https://site.fatecfranca.edu.br/images/logo-fatec-franca-15-anos.png" width=50% height=50%
-        alt="logo fatec"><br /><br />
-      <strong>Busca de Alunos</strong>
-    </h3>
-    <br />
+        <h3 align="center">
+            <img src="https://site.fatecfranca.edu.br/images/logo-fatec-franca-15-anos.png" width=50% height=50%
+                alt="logo fatec"><br /><br />
+            <strong>Busca de Alunos</strong>
+        </h3>
+        <br />
+        <!-- Definição de um painel com um formulário de busca e uma tabela para mostrar os resultados. O formulário tem um campo de entrada de texto que é vinculado à propriedade "query" no objeto de dados do Vue.js, que é atualizada quando o usuário digita algo no campo. Quando o usuário pressiona uma tecla (evento keyup), o método "fetchData()" é chamado para fazer uma requisição HTTP POST para um arquivo PHP chamado "busca.php" e passar a consulta digitada no campo de busca como parâmetro. -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
@@ -57,12 +60,14 @@
 <script>
     var application = new Vue({
         el: '#searchApp',
+        // Definição do objeto de dados Vue.js, com as propriedades "allData" (que armazena os dados da tabela), "query" (que armazena a consulta digitada no campo de busca) e "nodata" (que é verdadeiro quando não há dados para mostrar na tabela).
         data: {
             allData: '',
             query: '',
             nodata: false
         },
         methods: {
+            // Definição do método "fetchData()" que usa a biblioteca Axios para fazer uma requisição HTTP POST para o arquivo PHP "busca.php", passando a consulta como parâmetro. Se houver dados retornados pela API, eles são armazenados na propriedade "allData" do objeto de dados Vue.js, caso contrário, a propriedade "allData" é definida como vazia e a propriedade "nodata" é definida como verdadeira.
             fetchData: function () {
                 axios.post('busca.php', {
                     query: this.query
@@ -78,6 +83,7 @@
                 });
             }
         },
+        // Definição do método "created()" do Vue.js, que é chamado automaticamente quando o objeto é criado. Neste método, o método "fetchData()" é chamado para buscar os dados iniciais da tabela.
         created: function () {
             this.fetchData();
         }

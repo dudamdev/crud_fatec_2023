@@ -1,9 +1,18 @@
 <?php
+
+// Define o cabeçalho CORS para permitir que qualquer origem acesse o recurso.
 header('Access-Control-Allow-Origin: *');
 
-$connect = new PDO("mysql:host=localhost;dbname=id19500520_db", "id19500520_user", "Xitn^Gbvn3V9Kg<)");
+// Cria uma nova conexão PDO com o banco de dados MySQL.
+$connect = new PDO("mysql:host=localhost;dbname=id20492682_fatecbd", "id20492682_fatecbdr", "u136I9[JMI}}[cW2");
+
+// Decodifica o conteúdo da requisição AJAX, que deve estar no formato JSON, em um objeto PHP.
 $received_data = json_decode(file_get_contents("php://input"));
+
+// Cria um array vazio que será preenchido com dados do banco de dados e usado para gerar a resposta JSON.
 $data = array();
+
+// Se a ação solicitada pela requisição AJAX for 'fetchall', o script executa uma consulta SQL para buscar todos os registros da tabela fatec_alunos, adiciona cada registro ao array $data e retorna a resposta JSON com todos os registros.
 if ($received_data->action == 'fetchall') {
     $query = "
  SELECT * FROM fatec_alunos 
@@ -16,6 +25,8 @@ if ($received_data->action == 'fetchall') {
     }
     echo json_encode($data);
 }
+
+// Se a ação solicitada pela requisição AJAX for 'insert', o script insere um novo registro na tabela fatec_alunos com o primeiro nome e o último nome recebidos pela requisição e retorna a resposta JSON com a mensagem 'Aluno Adicionado'.
 if ($received_data->action == 'insert') {
     $data = array(
         ':first_name' => $received_data->firstName,
@@ -38,6 +49,8 @@ if ($received_data->action == 'insert') {
 
     echo json_encode($output);
 }
+
+// Se a ação solicitada pela requisição AJAX for 'fetchSingle', o script executa uma consulta SQL para buscar o registro com o ID especificado pela requisição, adiciona os dados do registro ao array $data e retorna a resposta JSON com os dados do registro.
 if ($received_data->action == 'fetchSingle') {
     $query = "
  SELECT * FROM fatec_alunos 
@@ -58,6 +71,8 @@ if ($received_data->action == 'fetchSingle') {
 
     echo json_encode($data);
 }
+
+// Se a ação solicitada pela requisição AJAX for 'update', o script atualiza o registro com o ID especificado pela requisição com o primeiro nome e o último nome recebidos pela requisição e retorna a resposta JSON com a mensagem 'Aluno Atualizado'.
 if ($received_data->action == 'update') {
     $data = array(
         ':first_name' => $received_data->firstName,
@@ -83,6 +98,7 @@ if ($received_data->action == 'update') {
     echo json_encode($output);
 }
 
+//  Se a ação solicitada pela requisição AJAX for 'delete', o script exclui o registro com o ID especificado pela requisição e retorna a resposta JSON com a mensagem 'Aluno Deletado'.
 if ($received_data->action == 'delete') {
     $query = "
  DELETE FROM fatec_alunos 
